@@ -1,0 +1,93 @@
+body {
+  background: green;
+  font-family: 'Lato', sans-serif;
+}
+
+lottie-player {
+  width: 80px;
+  background: white;
+  z-index: 3;
+}
+
+#animation-wrapper {
+  min-width: 80px;
+  padding: 0px;
+  position: fixed;
+  bottom: 120px;
+  left: 260px;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  animation-name: appearing-wrapper;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+#animation-wrapper.js-done {
+  opacity: 0 !important;
+}
+
+.hup {
+  display: flex;
+  overflow: hidden;
+  background: linear-gradient(to right, hsla(0, 0%, 100%, 0.994), hsla(0, 0%, 100%, 0.000));
+  background: linear-gradient(to right, hsla(0, 0%, 100%, 1) 80px, hsla(0, 0%, 100%, 0.4) 90%, hsla(0, 0%, 100%, 0) 100%);
+
+  border-radius: 300px;
+  align-items: center;
+  position: relative;
+}
+
+.course {
+  transition: all 0.2s ease;
+  opacity: 1;
+  display: block;
+  font-size: 16px;
+}
+
+.topic {
+  --width: 258px;
+  z-index: 0;
+  font-size: 28px;
+  animation-name: appearing-span;
+  animation-duration: 500ms;
+  animation-delay: 900ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  padding-right: 40px;
+  padding-left: 20px;
+  transition: all 0.2s ease-out;
+  width: var(--width);
+  margin-left: calc(var(--width) * -1 - 60px);
+}
+
+@keyframes appearing-wrapper {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes appearing-span {
+  0% {
+    margin-left: calc(var(--width) * -1 - 40px);
+  }
+
+  /* 80% {
+    letter-spacing: 9px;
+  } */
+
+  100% {
+    margin-left: 0;
+    letter-spacing: 0px;
+  }
+}
